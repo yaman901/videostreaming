@@ -50,7 +50,7 @@ import {
             <Heading textTransform={'uppercase'} textAlign={'center'}>
               VIDEO HUB
             </Heading>
-            <Text>All rights received</Text>
+            <Text>All rights reserved</Text>
           </VStack>
   
           <VStack w={'full'}>
