@@ -1,17 +1,21 @@
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
-import Home from './components/Home';
 import Footer from './components/Footer';
-import Videos from './components/Videos';
+
+const Home = lazy(() => import('./components/Home'));
+const Videos = lazy(() => import('./components/Videos'));
 
 function App() {
   return (
     <Router>
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/videos" element={<Videos />} />
-      </Routes>
+      <Suspense fallback={<div style={{ padding: 24 }}>Loading page...</div>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/videos" element={<Videos />} />
+        </Routes>
+      </Suspense>
       <Footer />
     </Router>
   );

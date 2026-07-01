@@ -40,7 +40,7 @@ const Home = () => {
           alignItems={'center'}
           direction={['column', 'row']}
         >
-          <Image src={img5} h={['40', '400']} filter={'hue-rotate(-130deg)'} />
+          <Image src={img5} h={['40', '400']} filter={'hue-rotate(-130deg)'} loading="lazy" />
 
           <Text
             letterSpacing={'widest'}
@@ -69,21 +69,59 @@ const Home = () => {
   );
 };
 
+const carouselSlides = [
+  {
+    src: img1,
+    title: 'Watch The Future',
+    bg: 'blackAlpha.600',
+    color: 'white',
+  },
+  {
+    src: img2,
+    title: 'Future is Gaming',
+    bg: 'whiteAlpha.900',
+    color: 'black',
+  },
+  {
+    src: img3,
+    title: 'Gaming on Console',
+    bg: 'blackAlpha.600',
+    color: 'black',
+  },
+  {
+    src: img4,
+    title: 'Night life is cool',
+    bg: 'blackAlpha.600',
+    color: 'black',
+  },
+];
+
 const MyCarousel = () => (
   <Carousel
     autoPlay
     infiniteLoop
-    interval={1000}
+    interval={3000}
+    lazyLoad
+    stopOnHover
+    swipeable
     showStatus={false}
     showThumbs={false}
     showArrows={false}
   >
-    <Box w="full" h={'100vh'}>
-      <Image src={img1} h="full" w={'full'} objectFit={'cover'} />
-      <Heading bgColor={'blackAlpha.600'} color={'white'} {...headingOptions}>
-        Watch The Future
-      </Heading>
-    </Box>
+    {carouselSlides.map((slide) => (
+      <Box key={slide.title} w="full" h={'100vh'}>
+        <Image
+          src={slide.src}
+          h="full"
+          w={'full'}
+          objectFit={'cover'}
+          loading="lazy"
+        />
+        <Heading bgColor={slide.bg} color={slide.color} {...headingOptions}>
+          {slide.title}
+        </Heading>
+      </Box>
+    ))}
     <Box w="full" h={'100vh'}>
       <Image src={img2} h="full" w={'full'} objectFit={'cover'} />
       <Heading bgColor={'whiteAlpha.900'} color={'black'} {...headingOptions}>
