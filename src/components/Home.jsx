@@ -50,7 +50,7 @@ const Home = () => {
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nemo
             tempora deleniti quod, est eos veniam autem asperiores rem, nam
-            laudantium ut, similique ducimus amet sequi et voluptas iusto rerum
+            laudantium, similique ducimus amet sequi et voluptas iusto rerum
             at aliquid numquam corporis ipsa reprehenderit? Porro iusto magnam,
             sit vero deleniti, non nemo rem accusamus neque, quibusdam ab.
             Libero, reprehenderit recusandae labore eaque, aspernatur aliquid
